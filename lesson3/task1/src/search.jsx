@@ -1,6 +1,4 @@
 import React from 'react';
-import './index.scss';
-import './search.scss';
 
 export default (props) => {
     const element = (
