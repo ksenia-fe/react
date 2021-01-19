@@ -1,6 +1,7 @@
 import React from 'react';
+import './search.scss';
 
-export default function(props) {
+const Search = (props) => {
     const element = (
         <div className="search">
             <h1 className="search__title">{`Hello, ${props.name}. What to search for you?`}</h1>
@@ -13,3 +14,5 @@ export default function(props) {
 
     return element;
 }
+
+export default Search;
