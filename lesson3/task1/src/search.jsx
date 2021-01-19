@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function(props) => {
+export default function(props) {
     const element = (
         <div className="search">
             <h1 className="search__title">{`Hello, ${props.name}. What to search for you?`}</h1>
