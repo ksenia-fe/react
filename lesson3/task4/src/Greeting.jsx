@@ -2,9 +2,9 @@ import React from 'react';
 
 const Greeting = ({firstName,lastName,birthDate}) => {
 
-    const yearsOld = year => {
+    const yearsOld = dateOfBirth => {
         const now = new Date().getFullYear();
-        return now - year;
+        return now - dateOfBirth.getFullYear();
         
     }
 
