@@ -7,11 +7,11 @@ const rootEl = document.querySelector('#root');
 
 const userInfo = {
     name: 'Tom',
-    avatarUrl: 'https://avatars.githubusercontent.com'
+    avatarUrl: 'https://avatars.githubusercontent.com/u10001'
 }
 ReactDOM.render(
     <Comment 
-        user={userInfo}
+        author={userInfo}
         text = 'Good job!'
         date = {new Date()}
     />, rootEl);
