@@ -33,9 +33,6 @@ module.exports = (env, argv) => {
         template: './src/index.html',
       }),
     ],
-    resolve: {
-      extensions: ['.js', '.jsx'],
-    },
     devServer: {
       hot: true,
     },
