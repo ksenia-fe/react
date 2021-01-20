@@ -5,10 +5,4 @@ import Greeting from './Greeting.jsx'
 
 const rootEl = document.querySelector('#root');
 
-const yearsOld = birthDate => {
-    const now = new Date().getFullYear();
-    return now - birthDate;
-    
-}
-
-ReactDOM.render(<Greeting firstName='John' lastName='Doe' birthDate={yearsOld(2004)}/>, rootEl);
+ReactDOM.render(<Greeting firstName='John' lastName='Doe' birthDate='2004'/>, rootEl);

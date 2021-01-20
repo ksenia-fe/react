@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Greeting = props => {
+const Greeting = ({firstName,lastName,birthDate}) => {
+
+    const yearsOld = year => {
+        const now = new Date().getFullYear();
+        return now - year;
+        
+    }
+
     return (
         <div className="greeting">
-            {`My name is ${props.firstName} ${props.lastName}. I'm ${props.birthDate} years old`}
+            {`My name is ${firstName} ${lastName}. I'm ${yearsOld(birthDate)} years old`}
         </div>
     )
 }
