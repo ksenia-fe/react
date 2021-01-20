@@ -13,7 +13,7 @@ const Profile = (userData) => {
     return (
         <div className='profile'>
             <div className='profile__name'>{`${userData.firstName} ${userData.lastName}`}</div>
-            <div className='profile__birth'>{`Was born ${y.join('')} ${userData.birthPlace}`}</div>
+            <div className='profile__birth'>{`Was born ${y.join('')} in ${userData.birthPlace}`}</div>
         </div>
     )
 }
