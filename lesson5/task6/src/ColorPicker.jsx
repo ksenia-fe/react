@@ -10,19 +10,9 @@ class ColorPicker extends React.Component {
         }
     }
 
-    aqua = () => {
+    setColorText = color => {
         this.setState({
-            text: 'Aqua'
-        })
-    }
-    coral = () => {
-        this.setState({
-            text: 'Coral'
-        })
-    }
-    bisque = () => {
-        this.setState({
-            text: 'Bisque'
+            text: color
         })
     }
 
@@ -39,15 +29,15 @@ class ColorPicker extends React.Component {
                 </div>
                 <div>
                     <button className="picker__button picker__button_coral"
-                        onMouseOver={this.coral}
+                        onMouseOver={() => this.setColorText('Coral')}
                         onMouseOut={this.empty}
                     ></button>
                     <button className="picker__button picker__button_aqua"
-                        onMouseOver={this.aqua}
+                        onMouseOver={() => this.setColorText('Aqua')}
                         onMouseOut={this.empty}
                     ></button>
                     <button className="picker__button picker__button_bisque"
-                        onMouseOver={this.bisque}
+                        onMouseOver={() => this.setColorText('Bisque')}
                         onMouseOut={this.empty}
                     ></button>
                 </div>
