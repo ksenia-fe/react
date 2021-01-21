@@ -1,11 +1,24 @@
 import React from 'react';
 
 class Toggler extends React.Component {
-    toggleHandler = (e) => e.target.textContent === 'Off' ? e.target.textContent = 'On' : e.target.textContent = 'Off'
+    constructor(props){
+        super(props);
+        this.state = {
+            text: 'Off'
+        }
+        this.toogleHandler = this.toogleHandler.bind(this)
+    }
+
+    toogleHandler(){
+        this.setState({
+            text: this.state.text === 'Off' ? 'On' : 'Off'
+        })
+    }
     render(){
         return(
             <button className="toggler"
-                onClick={this.toggleHandler}>Off
+                onClick={this.toogleHandler}>
+                {this.state.text}
             </button>
         )
     }
