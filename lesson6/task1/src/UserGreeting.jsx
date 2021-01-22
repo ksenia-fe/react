@@ -4,7 +4,7 @@ const emoji = String.fromCodePoint(0x1F60E)
 
 const UserGreeting = () => {
     return (
-        <h1>Hi User {emoji}</h1>
+        <h1>Hello, user {emoji}</h1>
     )
 }
 
