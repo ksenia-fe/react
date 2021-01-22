@@ -4,38 +4,37 @@ import Login from './Login.jsx'
 import Logout from './Logout.jsx'
 
 class Auth extends React.Component {
-    constructor(props){
-        super(props);
+  constructor (props){
+    super(props)
+    this.state = {
+      isLoggedIn: false
+    }
+  }
 
-        this.state = {
-            isLoggedIn: false
+  onLogin = () =>{
+    this.setState({
+      isLoggedIn: true
+    })
+  }
+
+  onLogout = () =>{
+    this.setState({
+      isLoggedIn: false
+    })
+  }
+
+  render(){
+
+    return (
+      <div className="panel">
+        <Greeting isLoggedIn={this.state.isLoggedIn}/>
+        {this.state.isLoggedIn
+        ? (<Logout onLogout={this.onLogout}/>)
+        : (<Login onLogin={this.onLogin}/>)
         }
-    }
-
-    onLogin = () => {
-        this.setState({
-           isLoggedIn: true 
-        })
-    }
-
-    onLogout = () => {
-        this.setState({
-           isLoggedIn: false 
-        })
-    }
-
-    render(){
-        const button = this.state.isLoggedIn 
-            ? <div onClick={this.onLogout}><Logout/></div>
-            : <div onClick={this.onLogin}><Login/></div>
-
-        return(
-            <div className='panel'>
-                <Greeting isLoggedIn={this.state.isLoggedIn}/>
-                {button}
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 }
 
-export default Auth
+export default Auth;

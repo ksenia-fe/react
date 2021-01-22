@@ -1,8 +1,10 @@
 import React from 'react';
 
-const UserGreeting = ({ isLoggedIn }) => {
+const emoji = String.fromCodePoint(0x1F60E)
+
+const UserGreeting = () => {
     return (
-        <h1>Hi User</h1>
+        <h1>Hi User {emoji}</h1>
     )
 }
 
