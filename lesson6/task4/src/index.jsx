@@ -5,7 +5,7 @@ import Status from './Status.jsx'
 
 const rootEl = document.querySelector('#root');
 
-ReactDOM.render(<Status isOnline={false}/>, rootEl);
+ReactDOM.render(<Status/>, rootEl);
 
 // 1. в индекс отрендерить статус ++
 

@@ -4,7 +4,7 @@ import Offline from './Offline.jsx';
 
 const Status = ({isOnline}) => {
     return (
-        isOnline === false ? <Offline/> : <Online/>
+        isOnline ? <Online/> : <Offline/>
     )
 }
 
