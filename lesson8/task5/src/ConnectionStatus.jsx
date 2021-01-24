@@ -21,7 +21,9 @@ class Status extends React.Component {
     onOffline = () => {
         this.setState({
             status: 'offline',
-        })
+        });
+        const el = document.querySelector('.status');
+        el.classList.add("status_offline");
     }
     
     onOnline = () => {
