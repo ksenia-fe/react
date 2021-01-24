@@ -1,12 +1,9 @@
 import React from 'react';
 
-class Status extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+class ConectionStatus extends React.Component {
+    state = {
             status: 'online',
         }
-    }
 
     componentDidMount() {
         window.addEventListener('offline', this.onOffline)
@@ -22,23 +19,21 @@ class Status extends React.Component {
         this.setState({
             status: 'offline',
         });
-        const el = document.querySelector('.status');
-        el.classList.add("status_offline");
     }
     
     onOnline = () => {
         this.setState({
             status: 'online',
         })
-        const el = document.querySelector('.status');
-        el.classList.remove("status_offline");
     }
 
     render(){
         return (
-            <div className="status">{this.state.status}</div>
+            this.state.status === 'online'
+                ? <div className="status">{this.state.status}</div>
+                : <div className="status status_offline">{this.state.status}</div>
         )
     }
 }
 
-export default Status;
+export default ConectionStatus;
