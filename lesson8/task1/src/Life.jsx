@@ -3,11 +3,10 @@ import React from 'react';
 class Life extends React.Component {
     constructor(props){
         super(props);
-        console.log('consctructor: good place to create state'); // +
     }
 
     componentDidMount() {
-        console.log('componentDidMount: API calls, subscriptions'); // +
+        console.log('componentDidMount: API calls, subscriptions');
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -24,7 +23,7 @@ class Life extends React.Component {
     }
 
     render() {
-        console.log('return React element to build DOM'); // +
+        console.log('return React element to build DOM');
         return (
             <div>{this.props.number}</div>
         )

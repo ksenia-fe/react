@@ -2,8 +2,12 @@ import React from 'react';
 import Life from './Life.jsx';
 
 class Demo extends React.Component {
-    state = {
-        number: Math.round(Math.random() * 100)
+    constructor(props){
+        super(props);
+        this.state = {
+            number: Math.round(Math.random() * 100)
+        }
+        console.log('consctructor: good place to create state');
     }
 
     show = () => {
