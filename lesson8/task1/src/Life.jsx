@@ -10,8 +10,9 @@ class Life extends React.Component {
         console.log('componentDidMount: API calls, subscriptions'); // +
     }
 
-    shouldComponentUpdate() {
-        console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render')
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render');
+        return nextProps;
     }
 
     componentDidUpdate() {
@@ -21,6 +22,7 @@ class Life extends React.Component {
     componentWillUnmount() {
         console.log('componentWillUnmount(): cleanup before DOM related to component will be removed');
     }
+
     render() {
         console.log('return React element to build DOM'); // +
         return (
