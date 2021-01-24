@@ -8,18 +8,26 @@ class Status extends React.Component {
         }
     }
 
-    onOnline = () => {
+    componentDidMount() {
+        window.addEventListener('offline', this.onOffline)
+        window.addEventListener('online', this.onOnline)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('offline', this.onOffline)
+        window.removeEventListener('online', this.onOnline)
+    }
+
+    onOffline = () => {
         this.setState({
             status: 'offline',
         })
     }
-
-    componentDidMount() {
-        window.addEventListener('offline', this.onOnline)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('offline', this.onOnline)
+    
+    onOnline = () => {
+        this.setState({
+            status: 'online',
+        })
     }
 
     render(){
