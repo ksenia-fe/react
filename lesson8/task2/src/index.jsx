@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Life from './Life.jsx'
+import App from './App.jsx'
 
 const rootEl = document.querySelector('#root');
 
-ReactDOM.render(<Life number={42}/>, rootEl);
+ReactDOM.render(<App number={42}/>, rootEl);

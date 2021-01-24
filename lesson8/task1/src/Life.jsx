@@ -3,15 +3,16 @@ import React from 'react';
 class Life extends React.Component {
     constructor(props){
         super(props);
+        console.log('consctructor: good place to create state');
     }
 
     componentDidMount() {
         console.log('componentDidMount: API calls, subscriptions');
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate() {
         console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render');
-        return nextProps;
+        return true;
     }
 
     componentDidUpdate() {
