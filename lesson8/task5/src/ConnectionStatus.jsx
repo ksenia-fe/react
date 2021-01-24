@@ -30,6 +30,8 @@ class Status extends React.Component {
         this.setState({
             status: 'online',
         })
+        const el = document.querySelector('.status');
+        el.classList.remove("status_offline");
     }
 
     render(){
