@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.scss';
-import SearchUser from './SearchUser.jsx';
+import UserForm from './UserForm.jsx';
 
 const rootEl = document.querySelector('#root');
 
-ReactDOM.render(<SearchUser />, rootEl);
+ReactDOM.render(<UserForm />, rootEl);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SearchUser extends React.Component {
+class UserForm extends React.Component {
   state = {
     name: '',
     student: '',
@@ -87,4 +87,4 @@ class SearchUser extends React.Component {
   }
 }
 
-export default SearchUser;
+export default UserForm;
