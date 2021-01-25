@@ -6,12 +6,15 @@ class App extends React.Component {
     super(props);
   }
 
-  createUser = (event) => {
-    const formEl = document.querySelectorAll('.form-input');
-    event.preventDefault();
-
-    console.log({ ...[...formEl].map((el) => el.value) });
+  createUser = (user) => {
+    console.log(user);
   };
+  // createUser = (event) => {
+  //   const formEl = document.querySelectorAll('.form-input');
+  //   event.preventDefault();
+
+  //   console.log({ ...[...formEl].map((input) => input.value) });
+  // };
 
   render() {
     return <UserForm onSubmit={this.createUser} />;
