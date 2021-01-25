@@ -22,8 +22,7 @@ class UserForm extends React.Component {
 
   submit = (event) => {
     event.preventDefault();
-
-    console.log(this.state);
+    this.props.onSubmit(this.state);
   };
 
   render() {
