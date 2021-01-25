@@ -4,55 +4,49 @@ import Logout from './Logout.jsx';
 import Spinner from './Spinner.jsx';
 
 class Auth extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            isLoggedIn: false,
-            isSpinner: false,
-        };
-    }
+    this.state = {
+      isLoggedIn: false,
+      isSpinner: false,
+    };
+  }
 
-    showSpinner = () => {
+  showSpinner = () => {
+    this.setState({
+      isSpinner: true,
+    });
+
+    setTimeout(() => {
       this.setState({
-          isSpinner: true,
+        isSpinner: false,
       });
-
-      setTimeout(() => {
-          this.setState({
-              isSpinner: false,
-          });
-      }, 2000);
+    }, 2000);
   };
 
-    logInHandler = () => {
-        this.setState({
-            isLoggedIn: true,
-        });
-        this.showSpinner();
-    };
+  logInHandler = () => {
+    this.setState({
+      isLoggedIn: true,
+    });
+    this.showSpinner();
+  };
 
-    logOutHandler = () => {
-        this.setState({
-            isLoggedIn: false,
-        });
-    };
+  logOutHandler = () => {
+    this.setState({
+      isLoggedIn: false,
+    });
+  };
 
-    render() {
-        const button = this.state.isLoggedIn
-            ? <Logout onLogout={this.logOutHandler}/>
-            : <Login onLogin={this.logInHandler}/>
+  render() {
+    const button = this.state.isLoggedIn ? (
+      <Logout onLogout={this.logOutHandler} />
+    ) : (
+      <Login onLogin={this.logInHandler} />
+    );
 
-        return (
-            <>
-                {this.state.isSpinner
-                    ? <Spinner size={50}/>
-                    : button}
-            </>
-        );
-    }
+    return <>{this.state.isSpinner ? <Spinner size={50} /> : button}</>;
+  }
 }
 
-export default Auth
-
-
+export default Auth;

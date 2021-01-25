@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Status from './Status.jsx'
+import Status from './Status.jsx';
 
 const rootEl = document.querySelector('#root');
 
-ReactDOM.render(<Status/>, rootEl);
+ReactDOM.render(<Status />, rootEl);
 
 // 1. в индекс отрендерить статус ++
 
