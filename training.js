@@ -14,3 +14,14 @@
 // const f = Promise.reject(new Error('error', SyntaxError));
 
 // f.catch((err) => console.log(err.stack));
+
+// посчитать время с указанной разницей
+const getTimeWithOffset = (offset) => {
+  const meAndUtcDifference = new Date().getTimezoneOffset() / 60;
+  const res = new Date(
+    new Date().setHours(new Date().getHours() + meAndUtcDifference + offset)
+  );
+
+  return res;
+};
+console.log(func(0));
