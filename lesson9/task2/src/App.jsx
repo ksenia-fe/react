@@ -3,25 +3,18 @@ import UserForm from './UserForm.jsx';
 
 class App extends React.Component {
   constructor(props) {
-    super(props),
-      (this.state = {
-        name: '',
-        student: '',
-        occupation: '',
-        about: '',
-      });
+    super(props);
   }
 
-  createUser = (user) => {};
-
-  onSubmit = (event) => {
+  createUser = (event) => {
+    const formEl = document.querySelectorAll('.form-input');
     event.preventDefault();
 
-    console.log(this.state);
+    console.log({ ...[...formEl].map((el) => el.value) });
   };
 
   render() {
-    return <UserForm onSubmit={this.onSubmit} />;
+    return <UserForm onSubmit={this.createUser} />;
   }
 }
 
