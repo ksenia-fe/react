@@ -25,10 +25,10 @@ class App extends React.Component {
     return (
       <div className="page">
         <h1 className="title">
-          Hello, {userData.firstName} {userData.lastName}
+          {`Hello, ${userData.firstName} ${userData.lastName}`}
         </h1>
         <main className="content">
-          <ShoppingCart userName={this.state.userData.firstName} count={2} />
+          <ShoppingCart userName={this.state.userData.firstName} />
           <Profile
             userData={this.state.userData}
             onChangeHandler={this.onChangeHandler}
