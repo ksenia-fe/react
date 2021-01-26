@@ -1,11 +1,9 @@
 import React from 'react';
 
-const UserMenu = ({ userName, count }) => {
+const CartTitle = ({ userName, count }) => {
   return (
-    <div className="cart-title">
-      {userName}, you added {count} items
-    </div>
+    <div className="cart-title">{`${userName}, you added ${count} items`}</div>
   );
 };
 
-export default UserMenu;
+export default CartTitle;
