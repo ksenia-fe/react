@@ -1,20 +1,38 @@
 import React from 'react';
 import UsersList from './UsersList.jsx';
 
-const users = class App extends React.Component {
+const users = [
+  {
+    name: 'Tom',
+    age: 23,
+    id: 'id-0',
+  },
+  {
+    name: 'Ann',
+    age: 9,
+    id: 'id-1',
+  },
+  {
+    name: 'Bob',
+    age: 12,
+    id: 'id-2',
+  },
+  {
+    name: 'Ashley',
+    age: 34,
+    id: 'id-3',
+  },
+  {
+    name: 'Mike',
+    age: 19,
+    id: 'id-4',
+  },
+];
+
+class App extends React.Component {
   render() {
-    return (
-      <div>
-        <div className="filter">
-          <span className="filter__count">5</span>
-          <input type="text" className="filter__input" />
-        </div>
-        <ul className="users">
-          <UsersList users={users} />
-        </ul>
-      </div>
-    );
+    return <UsersList users={users} />;
   }
-};
+}
 
 export default App;
