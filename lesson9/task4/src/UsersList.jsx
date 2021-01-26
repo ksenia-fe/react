@@ -27,6 +27,7 @@ class UsersList extends React.Component {
         />
         <ul className="users">
           {this.props.users
+            .slice()
             .map((user) => <User key={user.id} {...user} />)
             .filter((user) =>
               user.props.name
