@@ -3,13 +3,10 @@ import User from './User.jsx';
 import Filter from './Filter.jsx';
 
 class UsersList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 4,
-      filterText: '',
-    };
-  }
+  state = {
+    count: 4,
+    filterText: '',
+  };
 
   inputHandler = (event) => {
     this.setState({
@@ -27,7 +24,6 @@ class UsersList extends React.Component {
         />
         <ul className="users">
           {this.props.users
-            .slice()
             .map((user) => <User key={user.id} {...user} />)
             .filter((user) =>
               user.props.name
