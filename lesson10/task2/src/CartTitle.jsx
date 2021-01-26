@@ -1,9 +1,9 @@
 import React from 'react';
 
-const UserMenu = ({ userName, userLastName, count }) => {
+const UserMenu = ({ userName, count }) => {
   return (
     <div className="cart-title">
-      {userName} {userLastName}, you added {count} items
+      {userName}, you added {count} items
     </div>
   );
 };

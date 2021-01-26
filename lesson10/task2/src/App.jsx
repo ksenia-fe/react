@@ -28,7 +28,7 @@ class App extends React.Component {
           Hello, {userData.firstName} {userData.lastName}
         </h1>
         <main className="content">
-          <ShoppingCart userData={this.state.userData} count={2} />
+          <ShoppingCart userName={this.state.userData.firstName} count={2} />
           <Profile
             userData={this.state.userData}
             onChangeHandler={this.onChangeHandler}
