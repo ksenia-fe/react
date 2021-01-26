@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FilterableProductsTable from './FilterableProductsTable.jsx';
+import FilterableProductTable from './FilterableProductTable.jsx';
 
 const rootEl = document.querySelector('#root');
 
@@ -38,4 +38,4 @@ const products = [
   { category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7' },
 ];
 
-ReactDOM.render(<FilterableProductsTable products={products} />, rootEl);
+ReactDOM.render(<FilterableProductTable products={products} />, rootEl);

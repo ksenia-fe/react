@@ -2,7 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar.jsx';
 import ProductTable from './ProductTable.jsx';
 
-class FilterableProductsTable extends React.Component {
+class FilterableProductTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,4 +42,4 @@ class FilterableProductsTable extends React.Component {
   }
 }
 
-export default FilterableProductsTable;
+export default FilterableProductTable;
