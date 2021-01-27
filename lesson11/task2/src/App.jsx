@@ -26,7 +26,7 @@ class App extends React.Component {
         </button>
         <Dialog
           isOpen={this.state.isOpen}
-          hideDialog={this.hideDialog}
+          onClose={this.hideDialog}
           title="title"
         >
           <p>some text</p>
