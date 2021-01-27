@@ -9,12 +9,9 @@ import {
 } from './TasksGateway';
 
 class TasksList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tasks: [],
-    };
-  }
+  state = {
+    tasks: [],
+  };
 
   componentDidMount() {
     this.fetchTasks();
