@@ -26,8 +26,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <EvenNumbers title="Even number" number={this.state.number} />
         <Numbers title="All numbers" number={this.state.number} />
+        <EvenNumbers title="Even number" number={this.state.number} />
         <OddNumbers title="Odd number" number={this.state.number} />
       </div>
     );
