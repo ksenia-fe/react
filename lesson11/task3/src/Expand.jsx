@@ -1,20 +1,21 @@
 import React from 'react';
 
-class Expand extends React.PureComponent {
-render(){
+class Expand extends React.Component {
+  render() {
     return (
       <div className="expand border">
         <div className="expand__header">
-          <span className="expand__title">{title}</span>
-          <button onClick={func2} className="expand__toggle-btn">
-            <i className="fas fa-chevron-up">{arrow}</i>
+          <span className="expand__title">{this.props.title}</span>
+          <button onClick={this.props.toggler} className="expand__toggle-btn">
+            {this.props.arrow}
           </button>
         </div>
-        <div className="expand__content">{children}</div>
+        {this.props.isOpen ? (
+          <div className="expand__content">{this.props.children}</div>
+        ) : null}
       </div>
     );
   }
 }
-};
 
 export default Expand;

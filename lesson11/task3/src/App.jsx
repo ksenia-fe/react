@@ -9,15 +9,9 @@ class App extends React.Component {
     };
   }
 
-  func = () => {
+  contentToggler = () => {
     this.setState({
-      isOpen: true,
-    });
-  };
-
-  func2 = () => {
-    this.setState({
-      isOpen: false,
+      isOpen: !this.state.isOpen,
     });
   };
 
@@ -28,8 +22,7 @@ class App extends React.Component {
         <Expand
           arrow={arrow}
           isOpen={this.state.isOpen}
-          func={this.func}
-          func2={this.func2}
+          toggler={this.contentToggler}
           title={'this is title'}
         >
           <p>
