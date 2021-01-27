@@ -22,7 +22,7 @@ class Numbers extends React.Component {
   }
 }
 
-Numbers.propTypes = {
+Numbers.PropTypes = {
   title: PropTypes.string,
   number: PropTypes.number.isRequired,
 };
