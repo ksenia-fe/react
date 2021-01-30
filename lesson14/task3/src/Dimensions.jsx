@@ -21,10 +21,10 @@ const Dimensions = () => {
         height: innerHeight,
       });
       window.addEventListener('resize', handlerResize);
+    };
 
-      return () => {
-        window.removeEventListener('resize', handlerResize);
-      };
+    return () => {
+      window.removeEventListener('resize', handlerResize);
     };
   }, []);
 
