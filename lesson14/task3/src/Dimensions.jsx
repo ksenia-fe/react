@@ -20,8 +20,8 @@ const Dimensions = () => {
         width: innerWidth,
         height: innerHeight,
       });
-      window.addEventListener('resize', handlerResize);
     };
+    window.addEventListener('resize', handlerResize);
 
     return () => {
       window.removeEventListener('resize', handlerResize);
