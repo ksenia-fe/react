@@ -1,21 +1,67 @@
 import React, { useEffect, useState } from 'react';
-import Online from './Online.jsx';
-import Offline from './Offline.jsx';
 
 const ConnectionStatus = () => {
-  const [isOnline, setStatus] = useState(true);
+  const [status, setStatus] = useState('online');
 
-  useEffect =
-    (() => {
-      offlineStatus = () => setStatus(false);
+  useEffect(() => {
+    const onOffline = () => {
+      setStatus('offline');
+    };
 
-      window.addEventListener('ofline', offlineStatus);
+    const onOnline = () => {
+      setStatus('online');
+    };
 
-      return window.removeEventListener('offline', offlineStatus);
-    },
-    []);
+    window.addEventListener('offline', onOffline);
+    window.addEventListener('online', onOnline);
 
-  return isOnline ? <Online /> : <Offline />;
+    return () => {
+      window.removeEventListener('offline', onOffline);
+      window.removeEventListener('online', onOnline);
+    };
+  }, []);
+
+  return status === 'online' ? (
+    <div className="status">{status}</div>
+  ) : (
+    <div className="status status_offline">{status}</div>
+  );
 };
+
+// class ConnectionStatus extends React.Component {
+//   state = {
+//     status: 'online',
+//   };
+
+//   componentDidMount() {
+//     window.addEventListener('offline', this.onOffline);
+//     window.addEventListener('online', this.onOnline);
+//   }
+
+//   componentWillUnmount() {
+//     window.removeEventListener('offline', this.onOffline);
+//     window.removeEventListener('online', this.onOnline);
+//   }
+
+//   onOffline = () => {
+//     this.setState({
+//       status: 'offline',
+//     });
+//   };
+
+//   onOnline = () => {
+//     this.setState({
+//       status: 'online',
+//     });
+//   };
+
+//   render() {
+//     return this.state.status === 'online' ? (
+//       <div className="status">{this.state.status}</div>
+//     ) : (
+//       <div className="status status_offline">{this.state.status}</div>
+//     );
+//   }
+// }
 
 export default ConnectionStatus;
