@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App.jsx'
+import App from './App.jsx';
 
 const rootEl = document.querySelector('#root');
 
-ReactDOM.render(<App number={42}/>, rootEl);
+ReactDOM.render(<App />, rootEl);
