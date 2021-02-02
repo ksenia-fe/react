@@ -26,6 +26,14 @@ class UsersList extends React.Component {
     });
   };
 
+  // generateUsersRange = (user) => {
+  //   const result = [];
+  //   for (let i = 0; i < this.state.itemsPerPage; i += 1) {
+  //     result.push(user);
+  //   }
+  //   return result;
+  // };
+
   render() {
     return (
       <>
