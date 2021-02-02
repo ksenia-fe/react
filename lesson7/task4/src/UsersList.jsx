@@ -6,31 +6,41 @@ class UsersList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemsPerPage: 4,
-      listOfUsers: this.props.users
-        .map((user) => <User user={user} key={user.id} />)
-        .slice(0, this.itemsPerPage),
+      currentPage: 1,
+      itemsPerPage: 3,
+      // listOfUsers: this.props.users
+      //   .map((user) => <User user={user} key={user.id} />)
+      //   .slice(0, this.itemsPerPage),
     };
   }
 
   goPrev = () => {
-    console.log(`it will be goPrev func here`);
+    this.setState({
+      currentPage: this.state.currentPage - 1,
+    });
   };
 
   goNext = () => {
-    console.log(`it will be goNext func here`);
+    this.setState({
+      currentPage: this.state.currentPage + 1,
+    });
   };
+
   render() {
     return (
       <>
         <Pagination
           goPrev={this.goPrev}
           goNext={this.goNext}
-          currentPage={3}
-          totalItems={15}
+          currentPage={this.state.currentPage}
+          totalItems={this.props.users.length}
           itemsPerPage={this.state.itemsPerPage}
         />
-        <ul className="users">{this.state.listOfUsers}</ul>
+        <ul className="users">
+          {this.props.users
+            .map((user) => <User user={user} key={user.id} />)
+            .slice(0, this.state.itemsPerPage)}
+        </ul>
       </>
     );
   }
