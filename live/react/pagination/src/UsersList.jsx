@@ -28,7 +28,7 @@ class UsersList extends React.Component {
     const { users } = this.props;
 
     const start = (currentPage - 1) * usersPerPage;
-    const usersToDisplay = this.props.users.slice(start, start + usersPerPage);
+    const usersToDisplay = users.slice(start, start + usersPerPage);
 
     return (
       <div>
