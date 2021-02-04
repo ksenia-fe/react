@@ -1,38 +1,39 @@
 import React from 'react';
 
 class ConectionStatus extends React.Component {
-  state = {
-    status: 'online',
-  };
+  constructor(props) {
+    this.state = {
+      status: 'online',
+    };
+  }
 
   componentDidMount() {
-    window.addEventListener('offline', this.onOffline);
-    window.addEventListener('online', this.onOnline);
+    window.addEventListener('offline', this.handlerOfflineStatus);
+    window.addEventListener('online', this.handlerOnlineStatus);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('offline', this.onOffline);
-    window.removeEventListener('online', this.onOnline);
+    window.removeEventListener('offline', this.handlerOfflineStatus);
+    window.removeEventListener('online', this.handlerOnlineStatus);
   }
 
-  onOffline = () => {
+  handlerOfflineStatus = () => {
     this.setState({
       status: 'offline',
     });
   };
 
-  onOnline = () => {
+  handlerOnlineStatus = () => {
     this.setState({
       status: 'online',
     });
   };
 
   render() {
-    return this.state.status === 'online' ? (
-      <div className="status">{this.state.status}</div>
-    ) : (
-      <div className="status status_offline">{this.state.status}</div>
-    );
+    const { status } = this.state;
+    const className = `status ${status === 'offline' ? 'status_offline' : ''}`;
+
+    return <div className={className}>{status}</div>;
   }
 }
 
