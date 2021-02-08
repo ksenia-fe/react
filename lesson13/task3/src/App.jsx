@@ -1,6 +1,6 @@
 import React from 'react';
 import Users from './Users';
-import { BrowserRouter, Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import Home from './Home';
 
 const app = () => {
@@ -15,12 +15,12 @@ const app = () => {
             <Link to="/users">Users</Link>
           </li>
         </ul>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/users">
-          <Users />
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/users" component={Users}></Route>
+        </Switch>
       </BrowserRouter>
     </div>
   );
