@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 const User = ({ match }) => {
   const { userId } = match.params;
+
+  // inp: userid - string
+  // out: promise
   function fetchUser(userId) {
     return fetch(`https://api.github.com/users/${userId}`).then((response) =>
       response.json().then((data) => setUserData(data))
@@ -12,7 +15,7 @@ const User = ({ match }) => {
 
   useEffect(() => {
     fetchUser(userId);
-  }, []);
+  }, [match]);
 
   const { name, location, avatar_url } = userData;
 
