@@ -15,7 +15,7 @@ const User = ({ match }) => {
 
   useEffect(() => {
     fetchUser(userId);
-  }, [match]);
+  }, [userId]);
 
   const { name, location, avatar_url } = userData;
 
