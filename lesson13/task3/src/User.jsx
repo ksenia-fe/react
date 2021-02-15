@@ -1,23 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-const User = ({ match }) => {
-  const { userId } = match.params;
+const User = (props) => {
+  // const { userId } = match.params;
+  const { userId } = useParams();
 
-  // inp: userid - string
-  // out: promise
-  function fetchUser(userId) {
-    return fetch(`https://api.github.com/users/${userId}`).then((response) =>
+  // inp: init state
+  // out: array (state value, func to update state)
+  const [userData, setUserData] = useState({
+    avatar: null,
+    location: null,
+    name: null,
+  });
+
+  // UseEffect
+  // inp: func,array
+  // out: undef
+
+  // callback inp: none
+  // callback out: undef OR func
+  useEffect(() => {
+    // inp: user id - string
+    // out: promise
+    fetch(`https://api.github.com/users/${userId}`).then((response) =>
       response.json().then((data) => setUserData(data))
     );
-  }
 
-  const [userData, setUserData] = useState('');
-
-  useEffect(() => {
-    fetchUser(userId);
+    return;
   }, [userId]);
 
   const { name, location, avatar_url } = userData;
+
+  if (!name || !location || !avatar_url) {
+    return null;
+  }
 
   return (
     <div className="user">

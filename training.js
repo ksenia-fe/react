@@ -133,12 +133,20 @@
 //3 push it to created arr
 //4 take the first number from it
 
-function nextId(ids) {
-  return ids.map((el, ind) => {
-    return el;
-  });
-}
+// function nextId(ids) {
+//   return ids.map((el, ind) => {
+//     return el;
+//   });
+// }
 
-console.log(nextId([0, 1, 2, 3, 5]));
+// console.log(nextId([0, 1, 2, 3, 5]));
 
-console.log(window);
+// console.log(window);
+
+const f = () => {
+  return fetch(`https://api.github.com/users/github`).then((response) =>
+    console.log(response)
+  );
+};
+
+console.log(f());
