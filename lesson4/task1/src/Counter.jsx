@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import './counter.scss';
 
 class Counter extends Component {
@@ -18,5 +18,22 @@ class Counter extends Component {
     return <div className="counter">{this.state.counter}</div>;
   }
 }
+
+// TO DO
+// const Counter = ({ start, interval }) => {
+//   const [counter, setCounter] = useState(start);
+
+//   useEffect(() => {
+//     setInterval(() => {
+//       setCounter(counter + 1);
+//     }, interval);
+
+//     // return () => {
+//     //   intervalId;
+//     // };
+//   }, [counter]);
+
+//   return <div className="counter">{counter}</div>;
+// };
 
 export default Counter;

@@ -1,26 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Toggler extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: 'Off',
-    };
-  }
+const Toggler = () => {
+  const [text, setText] = useState('Off');
 
-  toogleHandler = () => {
-    this.setState({
-      text: this.state.text === 'Off' ? 'On' : 'Off',
-    });
+  const toggleHandler = () => {
+    setText(text === 'Off' ? 'On' : 'Off');
   };
 
-  render() {
-    return (
-      <button className="toggler" onClick={this.toogleHandler}>
-        {this.state.text}
-      </button>
-    );
-  }
-}
+  return (
+    <button className="toggler" onClick={toggleHandler}>
+      {text}
+    </button>
+  );
+};
 
 export default Toggler;
