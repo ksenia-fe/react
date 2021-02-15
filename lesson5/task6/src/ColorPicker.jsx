@@ -1,50 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class ColorPicker extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: null,
-    };
-  }
+const ColorPicker = () => {
+  const [title, setTitle] = useState(null);
 
-  setColorText = (color) => {
-    this.setState({
-      title: color,
-    });
+  const setColorText = (color) => {
+    setTitle(color);
   };
 
-  setTitle = (title) => {
-    this.setState({
-      title,
-    });
-  };
-  clearTitle = () => this.setTitle(null);
+  const clearTitle = () => setTitle(null);
 
-  render() {
-    return (
+  return (
+    <div>
+      <div className="picker__title">{title}</div>
       <div>
-        <div className="picker__title">{this.state.title}</div>
-        <div>
-          <button
-            className="picker__button picker__button_coral"
-            onMouseOver={() => this.setColorText('Coral')}
-            onMouseOut={this.clearTitle}
-          ></button>
-          <button
-            className="picker__button picker__button_aqua"
-            onMouseOver={() => this.setColorText('Aqua')}
-            onMouseOut={this.clearTitle}
-          ></button>
-          <button
-            className="picker__button picker__button_bisque"
-            onMouseOver={() => this.setColorText('Bisque')}
-            onMouseOut={this.clearTitle}
-          ></button>
-        </div>
+        <button
+          className="picker__button picker__button_coral"
+          onMouseOver={() => setColorText('Coral')}
+          onMouseOut={clearTitle}
+        ></button>
+        <button
+          className="picker__button picker__button_aqua"
+          onMouseOver={() => setColorText('Aqua')}
+          onMouseOut={clearTitle}
+        ></button>
+        <button
+          className="picker__button picker__button_bisque"
+          onMouseOver={() => setColorText('Bisque')}
+          onMouseOut={clearTitle}
+        ></button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default ColorPicker;
