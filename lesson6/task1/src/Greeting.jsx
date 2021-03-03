@@ -3,12 +3,10 @@ import UserGreeting from './UserGreeting.jsx';
 import GuestGreeting from './GuestGreeting.jsx';
 
 const Greeting = ({ isLoggedIn }) => {
-    if(isLoggedIn){
-        return(
-            <UserGreeting/>
-        )
-    }
-    return <GuestGreeting/>
-}
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+};
 
-export default Greeting
+export default Greeting;

@@ -1,39 +1,39 @@
 import React from 'react';
-import Greeting from './Greeting.jsx'
-import Login from './Login.jsx'
-import Logout from './Logout.jsx'
+import Greeting from './Greeting.jsx';
+import Login from './Login.jsx';
+import Logout from './Logout.jsx';
 
 class Auth extends React.Component {
-  constructor (props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      isLoggedIn: false
-    }
+      isLoggedIn: false,
+    };
   }
 
-  onLogin = () =>{
+  onLogin = () => {
     this.setState({
-      isLoggedIn: true
-    })
-  }
+      isLoggedIn: true,
+    });
+  };
 
-  onLogout = () =>{
+  onLogout = () => {
     this.setState({
-      isLoggedIn: false
-    })
-  }
+      isLoggedIn: false,
+    });
+  };
 
-  render(){
-
+  render() {
     return (
       <div className="panel">
-        <Greeting isLoggedIn={this.state.isLoggedIn}/>
-        {this.state.isLoggedIn
-        ? (<Logout onLogout={this.onLogout}/>)
-        : (<Login onLogin={this.onLogin}/>)
-        }
+        <Greeting isLoggedIn={this.state.isLoggedIn} />
+        {this.state.isLoggedIn ? (
+          <Logout onLogout={this.onLogout} />
+        ) : (
+          <Login onLogin={this.onLogin} />
+        )}
       </div>
-    )
+    );
   }
 }
 
